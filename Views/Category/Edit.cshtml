@@ -4,9 +4,15 @@
 <form method="post">
 	<div class="border p-3 mt-4">
 		<div class="row p-2">
-			<h2 class="text-primary">Create Category</h2>
+			<h2 class="text-primary">Edit Category</h2>
 			<hr />
 		</div>
+
+		@*
+			Campo oculto necessario para o Id ser passado e assim nao criar
+			numa nova instancia no Banco de dados e sim alterar uma ja existente
+		*@
+		<input type="hidden" asp-for="CategoryId" />
 		<!--<div asp-validation-summary="All"></div>-->
 		<div asp-validation-summary="ModelOnly"></div>
 		<div class="mb-3">
@@ -21,19 +27,19 @@
 		</div>
 		<div class="row">
 			<div class="col-6 col-md-3">
-				<button type="submit" class="btn btn-primary form-control">Create</button>
+				<button type="submit" class="btn btn-primary form-control">Update</button>
 			</div>
 			<div class="col-6 col-md-3">
 				<a asp-controller="Category" asp-action="Index" class="btn btn-outiline-secondary form-control">Back to List</a>
 			</div>
 		</div>
-		
-		
+
+
 	</div>
 </form>
 
 @section Scripts {
 	@{
-		<partial name="_ValidationScriptsPartial"/>
+				<partial name="_ValidationScriptsPartial"/>
 	}
 }
